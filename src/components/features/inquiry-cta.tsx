@@ -1,0 +1,6 @@
+import { ArrowUpRight, Mail } from "lucide-react";
+import { Container } from "@/components/ui/container";
+import { LinkButton } from "@/components/ui/link-button";
+import { Section } from "@/components/ui/section";
+import type { Profile } from "@/types";
+export function InquiryCta({ profile }: { profile: Profile }) { const href = `mailto:${profile.email}?subject=${encodeURIComponent("Portfolio inquiry")}`; return <Section id="connect" className="bg-ink text-paper"><Container className="grid gap-8 md:grid-cols-[1fr_auto] md:items-end"><div><p className="text-sm font-semibold uppercase tracking-[0.18em] text-paper/60">Let’s connect</p><h2 className="mt-3 max-w-2xl font-display text-4xl font-semibold leading-tight sm:text-6xl">Have an idea worth making real?</h2><p className="mt-5 max-w-xl leading-7 text-paper/70">For a role, collaboration, or client project, start with a short note.</p></div><div className="flex flex-wrap gap-3"><LinkButton className="bg-paper text-ink hover:bg-paper/90" href={href}><Mail size={16} /> Send an inquiry</LinkButton>{profile.links.map((link) => <LinkButton href={link.href} key={link.href} target="_blank" rel="noreferrer" variant="secondary" className="border-paper/30 text-paper hover:bg-paper/10">{link.label} <ArrowUpRight size={15} /></LinkButton>)}</div></Container></Section>; }

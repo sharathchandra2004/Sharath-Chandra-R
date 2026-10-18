@@ -1,0 +1,14 @@
+import type { Meta, StoryObj } from "@storybook/react";
+import { CreativeGrid } from "@/components/features/creative/creative-grid";
+import { CreativeHero } from "@/components/features/creative/creative-hero";
+import { CreativePlaceholder } from "@/components/features/creative/creative-placeholder";
+import { CreativePreviewCard } from "@/components/features/creative/creative-preview-card";
+import { creativePreviews } from "@/content/creative";
+import { profile } from "@/content/profile";
+const meta = { title: "Creative/Components", tags: ["autodocs"] } satisfies Meta;
+export default meta;
+type Story = StoryObj;
+export const Hero: Story = { render: () => <CreativeHero profile={profile} /> };
+export const Preview: Story = { render: () => <div className="max-w-xl p-8"><CreativePreviewCard item={creativePreviews[0]} /></div> };
+export const PreviewGrid: Story = { render: () => <CreativeGrid items={creativePreviews} /> };
+export const Placeholder: Story = { render: () => <div className="p-8"><CreativePlaceholder /></div> };

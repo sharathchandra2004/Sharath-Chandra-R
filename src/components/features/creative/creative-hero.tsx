@@ -1,0 +1,6 @@
+import { Sparkles } from "lucide-react";
+import { Container } from "@/components/ui/container";
+import { LinkButton } from "@/components/ui/link-button";
+import { Text } from "@/components/ui/text";
+import type { Profile } from "@/types";
+export function CreativeHero({ profile }: { profile: Profile }) { return <section className="relative overflow-hidden bg-[#fff8ef] py-20 sm:py-28"><div className="absolute -right-24 -top-16 size-80 rounded-full bg-[#e4b26a]/20 blur-3xl" /><Container className="relative"><p className="flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-[#9d5144]"><Sparkles size={16} /> Personal notebook</p><h1 className="mt-6 max-w-4xl font-display text-5xl font-semibold leading-[0.96] tracking-tight text-[#2d2434] sm:text-7xl lg:text-8xl">A place for the things that make the work <em className="font-normal text-[#9d5144]">richer.</em></h1><Text className="mt-8 max-w-2xl text-[#493044]/75">The other half of {profile.name}: a growing collection of words, images, films, conversations, and small moments of attention.</Text><LinkButton className="mt-9" href="#creative-collection" variant="creative">Browse the collection</LinkButton></Container></section>; }
